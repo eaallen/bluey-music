@@ -1,0 +1,276 @@
+/*****************************************************/
+/* This semester we will be using my variation of    */
+/* Josh Comeau's CSS Reset instead of normalize      */
+/* Read more at                                      */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+/*****************************************************/
+/* Always add your CSS below the reset CSS           */
+/*****************************************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Roboto:ital,wght@0,300;0,500;1,300&display=swap');
+
+:root {
+    --color-font: #333;
+    --color-primary: #AD3DA4;
+    --color-secondary: #ce8a02;
+    --color-success: #3BA614;
+    --color-info: #458E96;
+    --color-danger: #E66A1E;
+    --color-background: #FDFDFD;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    /* this an experimental line-height; if it breaks, add line-height: 1.5 to body */
+    line-height: calc(1em + 0.5rem);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* until you get a feel for overflow, I'll keep these next two commented out */
+/* p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+} */
+
+/* p {
+  overflow-wrap: break-word;
+  hyphens: auto;
+} */
+
+/* temp CSS for HTML only assignments */
+picture img {
+    width: 100%;
+}
+
+svg {
+    width: 200px;
+}
+
+/* temp fix to size about img */
+img[srcset] {
+    width: 50%;
+    height: auto;
+    margin: 2rem auto;
+}
+
+/* temporary fix to size svg images */
+img[src$="svg"] {
+    width: 200px;
+}
+
+/************ add your CSS here *****************/
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: var(--color-font);
+
+}
+
+main{
+    padding: 0 1rem;
+}
+
+article {
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 80ch;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    margin: 1rem auto;
+}
+
+h1 {
+    color: var(--color-primary);
+    font-size: 7em;
+    text-align: center;
+    margin: 4rem auto;
+}
+
+h2 {
+    color: var(--color-secondary);
+    font-size: 3em;
+}
+
+h3,
+h4,
+h5 {
+    color: var(--color-info);
+}
+
+a {
+    color: var(--color-info);
+    font-weight: 400;
+    transition: 300ms ease-in-out;
+    text-decoration: none;
+}
+
+a[href]:hover {
+    color: var(--color-danger);
+    cursor: pointer;
+}
+
+p {
+    font-size: 1.5em;
+    margin: 1rem auto;
+}
+
+ul,
+ol {
+    margin: 1rem auto;
+}
+
+a.button {
+    background-color: var(--color-info);
+    color: var(--color-background);
+    text-decoration: none;
+    padding: 10px 50px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 8px;
+    transition: 200ms;
+    letter-spacing: .15px;
+    max-width: 255px;
+    width: 100%;
+    border: 2px solid var(--color-info);
+    text-transform: uppercase;
+}
+
+a.button:hover {
+    background-color: var(--color-background);
+    border: 2px solid var(--color-info);
+    cursor: pointer;
+    color: var(--color-danger);
+}
+
+aside {
+    padding: 2rem;
+    background-color: var(--color-secondary);
+}
+
+article {
+    margin: 1rem auto;
+}
+
+footer {
+    padding: 2rem;
+    background-color: var(--color-font);
+    color: var(--color-background);
+}
+
+footer h2 {
+    font-size: 2rem;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+article>h2 {
+    font-size: 24px;
+    color: var(--color-primary);
+    display: inline-block;
+}
+
+article button {
+    background-color: var(--color-info);
+    color: var(--color-background);
+    text-decoration: none;
+    padding: 10px 50px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 8px;
+    transition: 200ms;
+    letter-spacing: .15px;
+    max-width: 255px;
+    width: 100%;
+    border: 2px solid var(--color-info);
+    text-transform: uppercase;
+    display: block;
+}
+
+article button:hover {
+    background-color: var(--color-background);
+    border: 2px solid var(--color-info);
+    cursor: pointer;
+    color: var(--color-danger);
+}
+
+article button:disabled,
+article button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+article {
+    border: 3px solid var(--color-font);
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-x: hidden;
+    max-width: 900px;
+    width: 100%;
+    columns: 3;
+    column-width: 200px;
+}
+
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 4em;
+        margin: 2rem auto;
+    }
+
+    h2{
+        font-size: 2em;
+    }
+
+    p{
+        font-size: 1.1em;
+    }
+  }
